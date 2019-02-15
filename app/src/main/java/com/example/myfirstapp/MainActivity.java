@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         params.put("access_token", "013b79d222f5e7dd12698c8ad79684755d8468cf");
         params.put("arg", "power_button");
 
-        JsonHttpResponseHandler http_response = new JsonHttpResponseHandler();
+        String additional_url = "mosfet";
 
-        ParticleRestClient.post("", params,  new JsonHttpResponseHandler(){
+        ParticleRestClient.post(additional_url, params,  new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
@@ -99,4 +99,6 @@ public class MainActivity extends AppCompatActivity {
 
         } );
     }
+
+
 }
