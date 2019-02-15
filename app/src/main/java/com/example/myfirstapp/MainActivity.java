@@ -14,6 +14,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.ResponseHandler;
 
@@ -32,24 +35,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        getParticlePowerStatus();
-        //power_state = false;
+        PowerStatusUpdate();
 
-        updatePowerString();
-        updatePowerColor();
-        updateMainTextDisplay();
-        updatePowerImage();
+        Timer myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                TimerMethod();
+            }
+
+        }, 0, 1000);
     }
+
+    private void TimerMethod() {
+        //This method is called directly by the timer
+        //and runs in the same thread as the timer.
+
+        //We call the method that will work with the UI
+        //through the runOnUiThread method.
+        this.runOnUiThread(Timer_Tick);
+    }
+
+
+    private Runnable Timer_Tick = new Runnable() {
+        public void run() {
+            PowerStatusUpdate();
+        }
+    };
+
 
     // Called when the user taps the send button
     public void sendMessage(View view) {
-        //power_state = !power_state;
         sendParticleSignal();
-        getParticlePowerStatus();
-        updatePowerString();
-        updatePowerColor();
-        updateMainTextDisplay();
-        updatePowerImage();
     }
 
     private void updatePowerString(){
@@ -173,8 +190,13 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("ws", "---->>onFailure" + throwable.toString());
             }
         } );
+    }
 
-
-
+    public void PowerStatusUpdate(){
+        getParticlePowerStatus();
+        updatePowerString();
+        updatePowerColor();
+        updateMainTextDisplay();
+        updatePowerImage();
     }
 }
