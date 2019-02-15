@@ -3,8 +3,9 @@ package com.example.myfirstapp;
 import com.loopj.android.http.*;
 
 public class ParticleRestClient {
-    private static final String FULL_URL = "https://api.particle.io/v1/devices/56002d001950483553353620/mosfet -d access_token=013b79d222f5e7dd12698c8ad79684755d8468cf -d arg=\"power_button\"";
-    private static final String BASE_URL = "https://api.particle.io/v1/devices/56002d001950483553353620/mosfet";
+    private static final String FULL_URL_MOSFET = "https://api.particle.io/v1/devices/56002d001950483553353620/mosfet -d access_token=013b79d222f5e7dd12698c8ad79684755d8468cf -d arg=power_button";
+    private static final String FULL_URL_POWER_STATE = "https://api.particle.io/v1/devices/56002d001950483553353620/power_state?access_token=013b79d222f5e7dd12698c8ad79684755d8468cf";
+    private static final String BASE_URL = "https://api.particle.io/v1/devices/56002d001950483553353620/";
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 
