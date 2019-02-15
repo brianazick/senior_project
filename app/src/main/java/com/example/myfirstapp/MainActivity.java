@@ -10,6 +10,7 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import cz.msebera.android.httpclient.Header;
@@ -24,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        power_state = false;
+        getParticlePowerStatus();
+        //power_state = false;
 
         updatePowerString();
         updateMainTextDisplay();
@@ -32,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
     // Called when the user taps the send button
     public void sendMessage(View view) {
-        power_state = !power_state;
+        //power_state = !power_state;
+        sendParticleSignal();
+        getParticlePowerStatus();
         updatePowerString();
         updateMainTextDisplay();
-        sendParticleSignal();
     }
 
     private void updatePowerString(){
@@ -44,12 +47,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             power_string = "The computer is in the off state.";
         }
-
     }
 
     private void updateMainTextDisplay(){
         TextView textView = findViewById(R.id.textView4);
         textView.setText(power_string);
+    }
+
+    public void setPower_state(boolean new_power_state){
+        power_state = new_power_state;
     }
 
     private void sendParticleSignal(){
@@ -95,10 +101,56 @@ public class MainActivity extends AppCompatActivity {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 Log.i("ws", "---->>onFailure" + throwable.toString());
             }
-
-
         } );
     }
 
+    private void getParticlePowerStatus(){
+        String additional_url = "power_state?access_token=013b79d222f5e7dd12698c8ad79684755d8468cf";
 
+        ParticleRestClient.get(additional_url, null,  new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    setPower_state(response.getBoolean("result"));
+                } catch (JSONException e) {
+                    Log.e("ws", "Getting power status boolean from http_response failed" + e.toString());
+                }
+                Log.i("ws", "---->>onSuccess JSONObject:" + response);
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                super.onSuccess(statusCode, headers, response);
+                Log.i("ws", "---->>onSuccess JSONArray");
+            }
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                super.onSuccess(statusCode, headers, responseString);
+                Log.i("ws", "---->>onSuccess responseString");
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+                Log.i("ws", "---->>onFailure:" + throwable.toString());
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Log.i("ws", "---->>onFailure" + throwable.toString());
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Log.i("ws", "---->>onFailure" + throwable.toString());
+            }
+        } );
+
+
+
+    }
 }
