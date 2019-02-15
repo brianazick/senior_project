@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -19,6 +20,12 @@ import cz.msebera.android.httpclient.client.ResponseHandler;
 public class MainActivity extends AppCompatActivity {
     private boolean power_state;
     private String power_string;
+    private int power_color;
+
+    private final static String power_on_string = "The computer is in the on state.";
+    private final static String power_off_string = "The computer is in the off state.";
+    private final static int power_off_color = R.color.red;
+    private final static int power_on_color = R.color.green;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         //power_state = false;
 
         updatePowerString();
+        updatePowerColor();
         updateMainTextDisplay();
+        updatePowerImage();
     }
 
     // Called when the user taps the send button
@@ -38,15 +47,30 @@ public class MainActivity extends AppCompatActivity {
         sendParticleSignal();
         getParticlePowerStatus();
         updatePowerString();
+        updatePowerColor();
         updateMainTextDisplay();
+        updatePowerImage();
     }
 
     private void updatePowerString(){
         if(power_state) {
-            power_string = "The computer is in the on state.";
+            power_string = power_on_string;
         } else {
-            power_string = "The computer is in the off state.";
+            power_string = power_off_string;
         }
+    }
+
+    private void updatePowerColor(){
+        if(power_state) {
+            power_color = power_on_color;
+        } else {
+            power_color = power_off_color;
+        }
+    }
+
+    private void updatePowerImage(){
+        ImageView imageView = findViewById(R.id.imageView);
+        imageView.setImageResource(power_color);
     }
 
     private void updateMainTextDisplay(){
