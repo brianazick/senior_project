@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My First App</string>
+    <string name="powerbutton">PowerButton</string>
+    <string name="textview">TextView</string>
 </resources>
