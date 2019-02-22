@@ -1,6 +1,8 @@
 package com.example.myfirstapp;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +18,7 @@ import org.json.JSONObject;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.ResponseHandler;
@@ -36,35 +39,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         PowerStatusUpdate();
-
-        Timer myTimer = new Timer();
-        myTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                TimerMethod();
-            }
-
-        }, 0, 1000);
     }
 
-    private void TimerMethod() {
-        //This method is called directly by the timer
-        //and runs in the same thread as the timer.
-
-        //We call the method that will work with the UI
-        //through the runOnUiThread method.
-        this.runOnUiThread(Timer_Tick);
+    public void updatePowerStatus(View view) {
+       PowerStatusUpdate();
     }
 
 
-    private Runnable Timer_Tick = new Runnable() {
-        public void run() {
-            PowerStatusUpdate();
-        }
-    };
-
-
-    // Called when the user taps the send button
+    // Called when the user taps the power button
     public void sendMessage(View view) {
         sendParticleSignal();
     }
@@ -111,6 +93,19 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 Log.i("ws", "---->>onSuccess JSONObject:" + response);
+                new CountDownTimer(30000, 1000) {
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        // do something after 1s
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        PowerStatusUpdate();
+                    }
+
+                }.start();
             }
 
             @Override
