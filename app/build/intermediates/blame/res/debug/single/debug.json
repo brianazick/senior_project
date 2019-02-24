@@ -604,10 +604,6 @@
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-xxhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_custom_big.xml.flat",
-        "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\b1ee086beb81c83c4516cdc5373c0858\\res\\layout\\notification_template_custom_big.xml"
-    },
-    {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-xhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -748,6 +744,10 @@
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
     },
     {
+        "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable_green.xml.flat",
+        "source": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\src\\main\\res\\drawable\\green.xml"
+    },
+    {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_search_url_text.xml.flat",
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\color\\abc_search_url_text.xml"
     },
@@ -852,12 +852,12 @@
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\b1ee086beb81c83c4516cdc5373c0858\\res\\layout-v21\\notification_action.xml"
     },
     {
-        "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
-        "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-28.0.0.aar\\b1ee086beb81c83c4516cdc5373c0858\\res\\layout-v16\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_16dp.png.flat",
+        "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
@@ -1258,6 +1258,10 @@
     {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\Brian Zick\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\d2c89a579181b5419bc469200ef0f094\\res\\drawable-ldrtl-xhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\drawable_red.xml.flat",
+        "source": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\src\\main\\res\\drawable\\red.xml"
     },
     {
         "merged": "C:\\Users\\Brian Zick\\OneDrive\\Documents\\Union\\Senior_Year\\Winter_Term\\ECE-499\\Android-App_Brian_Laptop\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_tooltip.xml.flat",

@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,59 +26,38 @@ import cz.msebera.android.httpclient.client.ResponseHandler;
 
 public class MainActivity extends AppCompatActivity {
     private boolean power_state;
-    private String power_string;
-    private int power_color;
-
-    private final static String power_on_string = "The computer is in the on state.";
-    private final static String power_off_string = "The computer is in the off state.";
-    private final static int power_off_color = R.color.red;
-    private final static int power_on_color = R.color.green;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PowerStatusUpdate();
+        getParticlePowerStatus();
     }
 
-    public void updatePowerStatus(View view) {
-       PowerStatusUpdate();
-    }
+    public void updatePowerStatus(View view) { getParticlePowerStatus(); }
 
 
     // Called when the user taps the power button
-    public void sendMessage(View view) {
+    public void sendPowerSignal(View view) {
         sendParticleSignal();
+        getParticlePowerStatus();
     }
 
-    private void updatePowerString(){
-        if(power_state) {
-            power_string = power_on_string;
-        } else {
-            power_string = power_off_string;
-        }
-    }
-
-    private void updatePowerColor(){
-        if(power_state) {
-            power_color = power_on_color;
-        } else {
-            power_color = power_off_color;
-        }
-    }
-
-    private void updatePowerImage(){
-        ImageView imageView = findViewById(R.id.imageView);
-        imageView.setImageResource(power_color);
-    }
-
-    private void updateMainTextDisplay(){
+    private void updatePowerVars(){
+        View button = findViewById(R.id.button2);
         TextView textView = findViewById(R.id.textView4);
-        textView.setText(power_string);
+
+        if(power_state) {
+            textView.setText(R.string.power_on_string);
+            button.setBackgroundResource(R.drawable.green);
+        } else {
+            textView.setText(R.string.power_off_string);
+            button.setBackgroundResource(R.drawable.red);
+        }
     }
 
-    public void setPower_state(boolean new_power_state){
+    private void setPower_state(boolean new_power_state){
         power_state = new_power_state;
     }
 
@@ -93,19 +73,6 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
                 Log.i("ws", "---->>onSuccess JSONObject:" + response);
-                new CountDownTimer(30000, 1000) {
-
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        // do something after 1s
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        PowerStatusUpdate();
-                    }
-
-                }.start();
             }
 
             @Override
@@ -149,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onSuccess(statusCode, headers, response);
                 try {
                     setPower_state(response.getBoolean("result"));
+                    updatePowerVars();
                 } catch (JSONException e) {
                     Log.e("ws", "Getting power status boolean from http_response failed" + e.toString());
                 }
@@ -185,13 +153,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("ws", "---->>onFailure" + throwable.toString());
             }
         } );
-    }
-
-    public void PowerStatusUpdate(){
-        getParticlePowerStatus();
-        updatePowerString();
-        updatePowerColor();
-        updateMainTextDisplay();
-        updatePowerImage();
     }
 }

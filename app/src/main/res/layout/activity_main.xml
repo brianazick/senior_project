@@ -8,57 +8,51 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="107dp"
         android:layout_marginStart="117dp"
         android:layout_marginLeft="117dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="117dp"
         android:layout_marginRight="117dp"
-        android:layout_marginBottom="296dp"
-        android:onClick="sendMessage"
+        android:layout_marginBottom="32dp"
+        android:onClick="sendPowerSignal"
         android:text="@string/powerbutton"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.652" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="62dp"
-        android:onClick="updatePowerStatus"
-        android:text="@string/statusbutton"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="222dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="160dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/power_off_string"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="@string/textview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@android:dimen/thumbnail_width"
-        android:layout_height="@android:dimen/thumbnail_height"
-        android:layout_marginStart="109dp"
-        android:layout_marginLeft="109dp"
-        android:layout_marginTop="102dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginRight="110dp"
-        android:layout_marginBottom="94dp"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="192dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="137dp"
+        android:background="@drawable/red"
+        android:drawableTop="@drawable/red"
+        android:onClick="updatePowerStatus"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/statusbutton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@color/red" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
 </android.support.constraint.ConstraintLayout>

@@ -3,4 +3,6 @@
     <string name="powerbutton">Power Button</string>
     <string name="statusbutton">Update Power Status</string>
     <string name="textview">TextView</string>
+    <string name="power_on_string">The computer is powered on.</string>
+    <string name="power_off_string">The computer is powered off.</string>
 </resources>
