@@ -6,32 +6,20 @@
     tools:context = ".LoginActivity">
 
     <TextView
-        android:text = "Login"
+        android:text = "@string/login"
         android:layout_width="wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/textview"
-        android:textSize = "35dp"
+        android:textSize = "35sp"
         android:layout_alignParentTop = "true"
         android:layout_centerHorizontal = "true" />
-
-    <TextView
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:text = "Tutorials point"
-        android:id = "@+id/textView"
-        android:layout_below = "@+id/textview"
-        android:layout_centerHorizontal = "true"
-        android:textColor = "#ff7aff24"
-        android:textSize = "35dp" />
 
     <EditText
         android:layout_width = "wrap_content"
         android:layout_height = "wrap_content"
         android:id = "@+id/editText"
-        android:hint = "Enter Name"
+        android:hint = "@string/enter_name"
         android:focusable = "true"
-        android:textColorHighlight = "#ff7eff15"
-        android:textColorHint = "#ffff25e6"
         android:layout_marginTop = "46dp"
         android:layout_below = "@+id/imageView"
         android:layout_alignParentLeft = "true"
@@ -44,7 +32,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:src="@drawable/red"
-        android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
 
     <EditText
@@ -58,18 +45,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
-        android:textColorHint="#ffff299f"
-        android:hint="Password" />
+        android:hint="@string/password" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Attempts Left:"
+        android:text="@string/attempts_left"
         android:id="@+id/textView2"
         android:layout_below="@+id/editText2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="25dp" />
+        android:textSize="25sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -81,8 +67,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/textView2"
         android:layout_toEndOf="@+id/textview"
-        android:textSize="25dp"
-        android:layout_toRightOf="@+id/textview" />
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/textview"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/button"
@@ -92,7 +79,7 @@
         android:layout_toStartOf="@+id/textview"
         android:layout_toLeftOf="@+id/textview"
         android:onClick="attemptLogin"
-        android:text="login" />
+        android:text="@string/login" />
 
     <Button
         android:id="@+id/button2"
@@ -102,6 +89,6 @@
         android:layout_toEndOf="@+id/textview"
         android:layout_toRightOf="@+id/textview"
         android:onClick="cancel"
-        android:text="Cancel" />
+        android:text="@string/cancel" />
 
 </RelativeLayout>

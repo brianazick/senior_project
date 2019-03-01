@@ -5,4 +5,11 @@
     <string name="textview">TextView</string>
     <string name="power_on_string">The computer is powered on.</string>
     <string name="power_off_string">The computer is powered off.</string>
+    <string name="login">Login</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="password">Password</string>
+    <string name="attempts_left">Attempts Left:</string>
+    <string name="cancel">Cancel</string>
+    <string name="wrong_credentials">Wrong Credentials</string>
+    <string name="redirecting">Redirecting...</string>
 </resources>
