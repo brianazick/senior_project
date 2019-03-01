@@ -1,4 +1,4 @@
-package com.example.myfirstapp;
+package edu.union.remote_desktop_power_switch;
 
 import com.loopj.android.http.*;
 

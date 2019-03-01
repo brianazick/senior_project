@@ -35,7 +35,7 @@ INJECTED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Te
 INJECTED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:2:1-23:12
 INJECTED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:2:1-23:12
 	package
-		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:3:5-37
+		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml
 	android:versionName
@@ -74,10 +74,10 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Brian Zick
 		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:13:9-40
-activity#com.example.myfirstapp.MainActivity
+activity#edu.union.remote_desktop_power_switch.MainActivity
 ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:14:19-47
+		ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:14:19-84
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\Brian Zick\OneDrive\Documents\Union\Senior_Year\Winter_Term\ECE-499\Android-App_Brian_Laptop\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN

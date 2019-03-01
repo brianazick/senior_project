@@ -1,13 +1,9 @@
-package com.example.myfirstapp;
+package edu.union.remote_desktop_power_switch;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -17,12 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
-
 import cz.msebera.android.httpclient.Header;
-import cz.msebera.android.httpclient.client.ResponseHandler;
 
 public class MainActivity extends AppCompatActivity {
     private boolean power_state;
