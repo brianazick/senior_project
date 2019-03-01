@@ -6,4 +6,5 @@
     <color name="red">#CC3232</color>
     <color name="green">#2dc937</color>
     <color name="grey">#BDBDBD</color>
+    <color name="default_button_grey">#D6D7D7</color>
 </resources>
