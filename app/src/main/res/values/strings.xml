@@ -12,4 +12,5 @@
     <string name="cancel">Cancel</string>
     <string name="wrong_credentials">Wrong Credentials</string>
     <string name="redirecting">Redirecting...</string>
+    <string name="timeout">Timed out for %d minutes due to failed attempts.</string>
 </resources>
