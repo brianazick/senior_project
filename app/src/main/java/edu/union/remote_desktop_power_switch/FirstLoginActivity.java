@@ -31,11 +31,11 @@ public class FirstLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_login);
 
-//        SharedPreferences prefs = this.getPreferences("encryption", Context.MODE_PRIVATE);
-//
-//        if (prefs.getBoolean("user_exists", false)) {
-//            this.transitionToLoginActivity();
-//        }
+        SharedPreferences prefs = this.getSharedPreferences("encryption", Context.MODE_PRIVATE);
+
+        if (prefs.getBoolean("user_exists", false)) {
+            this.transitionToLoginActivity();
+        }
     }
 
    public void attemptCreate(View view) {
