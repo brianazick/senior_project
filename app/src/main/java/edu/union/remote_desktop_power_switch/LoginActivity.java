@@ -6,11 +6,17 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+
+import javax.crypto.SecretKey;
 
 public class LoginActivity  extends AppCompatActivity {
     private static final int COUNTER_START_VALUE = 3;
@@ -45,13 +51,58 @@ public class LoginActivity  extends AppCompatActivity {
     }
 
    public void attemptLogin(View view) {
-        if(username_field.getText().toString().equals("admin") && password_field.getText().toString().equals("admin")) {
-            Toast.makeText(getApplicationContext(),getString(R.string.redirecting),Toast.LENGTH_SHORT).show();
-            this.transitionToMainActivity(view);
+       SharedPreferences prefs = getSharedPreferences("encryption", Context.MODE_PRIVATE);
+       Boolean user_exists = prefs.getBoolean("user_exists", false);
+       String encrypted_password = prefs.getString("password", "none");
+       String encrypted_username = prefs.getString("username", "none");
+       String password_salt = prefs.getString("password_salt", "none");
+       String username_salt = prefs.getString("username_salt", "none");
+
+       Log.d("user", user_exists.toString());
+       Log.d("encrypted_pw", encrypted_password);
+       Log.d("encrypted_username", encrypted_username);
+       Log.d("pw_salt", password_salt);
+       Log.d("username_salt", username_salt);
+
+        if(!user_exists
+           || encrypted_password.equals("none")
+           || encrypted_username.equals("none")
+           || password_salt.equals("none")
+           || username_salt.equals("none")) {
+            Toast.makeText(getApplicationContext(),"There are no credentials currently stored.",Toast.LENGTH_SHORT).show();
         } else {
-            login_counter--;
-            check_login_attempts();
-            update_attempt_counter();
+
+            try {
+
+                String passed_password = password_field.getText().toString();
+                String passed_username = username_field.getText().toString();
+
+                char[] passed_password_chars = passed_password.toCharArray();
+                char[] passed_username_chars = passed_username.toCharArray();
+
+                SecretKey passed_password_encrypted = EncryptionHelper.generateKey(passed_password_chars, password_salt.getBytes());
+                SecretKey passed_username_encrypted = EncryptionHelper.generateKey(passed_username_chars, username_salt.getBytes());
+
+                String passed_password_encrypted_string = new String(passed_password_encrypted.getEncoded());
+                String passed_username_encrypted_string = new String(passed_username_encrypted.getEncoded());
+
+                Log.d("passed_pw", passed_password_encrypted_string);
+                Log.d("passed_username", passed_username_encrypted_string);
+
+                if(passed_password_encrypted_string.equals(encrypted_password) && passed_username_encrypted_string.equals(encrypted_username)) {
+                    Toast.makeText(getApplicationContext(),getString(R.string.redirecting),Toast.LENGTH_SHORT).show();
+                    this.transitionToMainActivity(view);
+                } else {
+                    login_counter--;
+                    check_login_attempts();
+                    update_attempt_counter();
+                }
+
+            } catch (NoSuchAlgorithmException e) {
+                Toast.makeText(getApplicationContext(),"Failure to encrypt credentials. Try again.",Toast.LENGTH_SHORT).show();
+            } catch (InvalidKeySpecException e) {
+                Toast.makeText(getApplicationContext(),"Failure to encrypt credentials. Try again.",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

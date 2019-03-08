@@ -14,16 +14,21 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name="edu.union.remote_desktop_power_switch.LoginActivity"
+            android:parentActivityName="edu.union.remote_desktop_power_switch.FirstLoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="edu.union.remote_desktop_power_switch.MainActivity"
             android:parentActivityName="edu.union.remote_desktop_power_switch.LoginActivity"
             android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name="edu.union.remote_desktop_power_switch.FirstLoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
