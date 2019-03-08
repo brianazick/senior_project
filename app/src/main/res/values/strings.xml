@@ -5,4 +5,18 @@
     <string name="textview">TextView</string>
     <string name="power_on_string">The computer is powered on.</string>
     <string name="power_off_string">The computer is powered off.</string>
+    <string name="login">Login</string>
+    <string name="setup">Set Up</string>
+    <string name="create">Create</string>
+    <string name="enter_name">Enter Username</string>
+    <string name="password">Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="attempts_left">Attempts Left:</string>
+    <string name="cancel">Cancel</string>
+    <string name="wrong_credentials">Wrong Credentials</string>
+    <string name="redirecting">Redirecting...</string>
+    <string name="timeout">Timed out for %d minutes due to failed attempts.</string>
+    <string name="public_iv_personal">PUBLIC_IV_PERSONAL</string>
+    <string name="bad_pws">Passwords did not match. Try again.</string>
 </resources>
