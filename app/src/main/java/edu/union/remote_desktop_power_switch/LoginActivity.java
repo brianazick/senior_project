@@ -25,6 +25,7 @@ public class LoginActivity  extends AppCompatActivity {
 
 
     private Button login_button, cancel_button;
+
     private EditText username_field, password_field;
     private TextView attempts_counter_display;
     private int login_counter;
@@ -37,9 +38,7 @@ public class LoginActivity  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login_button = (Button) findViewById(R.id.button);
-        cancel_button = (Button) findViewById(R.id.button2);
-
+        login_button = (Button) findViewById(R.id.button2);
         username_field = (EditText) findViewById(R.id.editText);
         password_field = (EditText) findViewById(R.id.editText2);
 
@@ -64,19 +63,22 @@ public class LoginActivity  extends AppCompatActivity {
        Log.d("pw_salt", password_salt);
        Log.d("username_salt", username_salt);
 
+       String passed_password = password_field.getText().toString();
+       String passed_username = username_field.getText().toString();
+
         if(!user_exists
            || encrypted_password.equals("none")
            || encrypted_username.equals("none")
            || password_salt.equals("none")
            || username_salt.equals("none")) {
             Toast.makeText(getApplicationContext(),"There are no credentials currently stored.",Toast.LENGTH_SHORT).show();
+        } else if(passed_password.equals("") || passed_username.equals("")) {
+            login_counter--;
+            check_login_attempts();
+            update_attempt_counter();
         } else {
 
             try {
-
-                String passed_password = password_field.getText().toString();
-                String passed_username = username_field.getText().toString();
-
                 char[] passed_password_chars = passed_password.toCharArray();
                 char[] passed_username_chars = passed_username.toCharArray();
 
@@ -106,7 +108,7 @@ public class LoginActivity  extends AppCompatActivity {
         }
     }
 
-    public void cancel(View view) {
+    public void createNew(View view) {
         finish();
     }
 

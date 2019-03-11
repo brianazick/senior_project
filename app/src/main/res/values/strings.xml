@@ -19,4 +19,6 @@
     <string name="timeout">Timed out for %d minutes due to failed attempts.</string>
     <string name="public_iv_personal">PUBLIC_IV_PERSONAL</string>
     <string name="bad_pws">Passwords did not match. Try again.</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="login_prompt">Login prompt</string>
 </resources>

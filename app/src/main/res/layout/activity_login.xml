@@ -1,94 +1,100 @@
 <?xml version = "1.0" encoding = "utf-8"?>
-<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
-    xmlns:tools = "http://schemas.android.com/tools"
-    android:layout_width = "match_parent"
-    android:layout_height = "match_parent"
-    tools:context = ".LoginActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
 
     <TextView
-        android:text = "@string/login"
+        android:id="@+id/textview"
         android:layout_width="wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/textview"
-        android:textSize = "35sp"
-        android:layout_alignParentTop = "true"
-        android:layout_centerHorizontal = "true" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/login"
+        android:textSize="35sp" />
 
     <EditText
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:id = "@+id/editText"
-        android:hint = "@string/enter_name"
-        android:focusable = "true"
-        android:layout_marginTop = "46dp"
-        android:layout_below = "@+id/imageView"
-        android:layout_alignParentLeft = "true"
-        android:layout_alignParentStart = "true"
-        android:layout_alignParentRight = "true"
-        android:layout_alignParentEnd = "true" />
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="46dp"
+        android:focusable="true"
+        android:hint="@string/enter_name"
+        android:autofillHints=""
+        android:inputType="" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/red"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/login_prompt"
+        android:src="@drawable/red" />
 
     <EditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText2"
         android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/editText"
         android:layout_alignEnd="@+id/editText"
-        android:hint="@string/password" />
+        android:layout_alignRight="@+id/editText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:autofillHints="" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/attempts_left"
-        android:id="@+id/textView2"
         android:layout_below="@+id/editText2"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="false"
+        android:text="@string/attempts_left"
         android:textSize="25sp" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/textView3"
         android:layout_alignTop="@+id/textView2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/textView2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_toEndOf="@+id/textview"
-        android:textSize="25sp"
         android:layout_toRightOf="@+id/textview"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="New Text"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="107dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/textview"
+        android:layout_marginRight="-24dp"
+        android:layout_marginBottom="230dp"
         android:layout_toLeftOf="@+id/textview"
-        android:onClick="attemptLogin"
-        android:text="@string/login" />
+        android:onClick="createNew"
+        android:text="@string/create_new_account" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="107dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-34dp"
+        android:layout_marginBottom="232dp"
         android:layout_toEndOf="@+id/textview"
-        android:layout_toRightOf="@+id/textview"
-        android:onClick="cancel"
-        android:text="@string/cancel" />
+        android:onClick="attemptLogin"
+        android:text="@string/login" />
 
 </RelativeLayout>
