@@ -20,13 +20,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginTop="46dp"
+        android:autofillHints=""
         android:focusable="true"
         android:hint="@string/enter_name"
-        android:autofillHints=""
         android:inputType="" />
 
     <ImageView
@@ -43,13 +41,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText"
         android:layout_alignEnd="@+id/editText"
-        android:layout_alignRight="@+id/editText"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword"
-        android:autofillHints="" />
+        android:inputType="textPassword" />
 
     <TextView
         android:id="@+id/textView2"
@@ -57,7 +53,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText2"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="false"
         android:text="@string/attempts_left"
         android:textSize="25sp" />
 
@@ -68,9 +63,7 @@
         android:layout_alignTop="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_toEndOf="@+id/textview"
-        android:layout_toRightOf="@+id/textview"
         android:gravity="center"
         android:text="New Text"
         android:textSize="25sp" />
@@ -80,9 +73,7 @@
         android:layout_width="143dp"
         android:layout_height="107dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="-24dp"
         android:layout_marginBottom="230dp"
-        android:layout_toLeftOf="@+id/textview"
         android:onClick="createNew"
         android:text="@string/create_new_account" />
 
@@ -91,7 +82,6 @@
         android:layout_width="143dp"
         android:layout_height="107dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="-34dp"
         android:layout_marginBottom="232dp"
         android:layout_toEndOf="@+id/textview"
         android:onClick="attemptLogin"
