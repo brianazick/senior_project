@@ -25,7 +25,8 @@
         android:autofillHints=""
         android:focusable="true"
         android:hint="@string/enter_name"
-        android:inputType="" />
+        android:importantForAutofill="yes"
+        android:inputType="textVisiblePassword|textNoSuggestions" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -45,6 +46,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/password"
+        android:importantForAutofill="yes"
         android:inputType="textPassword" />
 
     <TextView
@@ -72,8 +74,12 @@
         android:id="@+id/button"
         android:layout_width="143dp"
         android:layout_height="107dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="230dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginBottom="233dp"
         android:onClick="createNew"
         android:text="@string/create_new_account" />
 
@@ -81,9 +87,12 @@
         android:id="@+id/button2"
         android:layout_width="143dp"
         android:layout_height="107dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="232dp"
-        android:layout_toEndOf="@+id/textview"
+        android:layout_marginTop="145dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="233dp"
         android:onClick="attemptLogin"
         android:text="@string/login" />
 

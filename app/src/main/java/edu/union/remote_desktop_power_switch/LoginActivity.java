@@ -24,7 +24,7 @@ public class LoginActivity  extends AppCompatActivity {
     private static final int TIME_OUT_IN_MILLISECONDS = 60000;//300000;
 
 
-    private Button login_button, cancel_button;
+    private Button login_button;
 
     private EditText username_field, password_field;
     private TextView attempts_counter_display;

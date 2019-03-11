@@ -21,4 +21,5 @@
     <string name="bad_pws">Passwords did not match. Try again.</string>
     <string name="create_new_account">Create new account</string>
     <string name="login_prompt">Login prompt</string>
+    <string name="account_set_up_prompt">Account set up prompt</string>
 </resources>

@@ -4,26 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
 
-import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
-
-import static edu.union.remote_desktop_power_switch.EncryptionHelper.generateKey;
 
 public class FirstLoginActivity extends AppCompatActivity {
     @Override
@@ -39,9 +28,9 @@ public class FirstLoginActivity extends AppCompatActivity {
     }
 
    public void attemptCreate(View view) {
-       EditText username_field = (EditText) findViewById(R.id.editText);
-       EditText password_field = (EditText) findViewById(R.id.editText2);
-       EditText password_confirm_field = (EditText) findViewById(R.id.editText3);
+       EditText username_field = findViewById(R.id.editText);
+       EditText password_field = findViewById(R.id.editText2);
+       EditText password_confirm_field = findViewById(R.id.editText3);
 
        String username_string = username_field.getText().toString();
        String password_string = password_field.getText().toString();
